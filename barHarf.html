@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getting Started with Chart JS with www.chartjs3.com</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .chartMenu {
+        width: 100vw;
+        height: 40px;
+        background: #1A1A1A;
+        color: rgba(125, 26, 104, 1);
+      }
+      .chartMenu p {
+        padding: 10px;
+        font-size: 20px;
+      }
+      .chartCard {
+        width: 100vw;
+        height: calc(100vh - 40px);
+        background: rgb(255, 0, 85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 700px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px rgb(57, 26, 255);
+        background: rgba(240, 224, 157, 0.933);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chartMenu">
+      <p>WWW.CHARTJS3.COM (Chart JS 3.8.2)</p>
+    </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js" integrity="sha512-Tfw6etYMUhL4RTki37niav99C6OHwMDB2iBT5S5piyHO+ltK2YX8Hjy9TXxhE1Gm/TmAV0uaykSpnHKFIAif/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+    // setup 
+    const data = {
+      labels: ["ภาษาไทย", "ภาษาอังกฤษ", "วิทยาศาสตร์", "คอมพิวเตอร์", "สังคมศาสตร์"],
+      datasets: [{
+        label: 'ไม่ผ่าน',
+        data: [7, 14, 17, 16, 15, 14, 13],
+        backgroundColor: ['#99FF00 ',],
+        borderColor:['#CCFF00 ',],
+        borderWidth:1    
+        },{
+        label: 'ผ่าน',
+        data: [23, 16, 13, 14, 15, 16, 17],
+        backgroundColor: ['#3399ff'],
+        borderColor:['#CCFF00'],
+        borderWidth:1        
+      }]
+    };
+
+    // config 
+    const config = {
+      type: 'bar',
+      data,
+      options: {
+        scales: {
+          x:{
+            stacked:true,
+          },
+          y:{
+            stacked:true,
+            beginAtZero: true
+          }
+        }
+      },
+      plugins: [ChartDataLabels]
+    };
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+    </script>
+
+  </body>
+</html>

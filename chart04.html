@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<style>
+    .button {
+      background-color: #d400ff; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .button2 {background-color: #ba0000;} /* Blue */
+    .button3 {background-color: #3639f4;} /* Red */ 
+    .button4 {background-color: #26ff00; color: black;} /* Gray */ 
+    .button5 {background-color: #00e1ff;} /* Black */
+</style>
+
+<body>
+<Table border="1">
+<Tr>
+    <Td><center><button class="button">มาเรียน-ขาดเรียน</button></center></Td>
+    <td><center><button class="button button2">ระดับผลการศึกษา</button></center></td>
+    
+</Tr>
+
+<Tr>
+    <Td><canvas id="myChart" style="width:200%;max-width:600px"></canvas></Td>
+    <td><canvas id="myChart2" style="width:200%;max-width:600px"></canvas></td>
+    
+</Tr>
+</table>
+<Table>
+  <Tr>
+      <Td><center><button class="button">โรงเรียนขนาดเล็ก<br>จำนวน...</button></center></Td>
+      <td><center><button class="button button2">โรงเรียนขนาดกลาง<br>จำนวน...</button></center></td>
+  </Tr>
+  
+  <Tr>
+      <Td><canvas id="myChart4" style="width:200%;max-width:600px"></canvas></Td>
+      <td><canvas id="myChart5" style="width:200%;max-width:600px"></canvas></td>
+  </Tr>
+  </table>
+
+  <Table>
+    <Tr>
+        <Td><center><button class="button">โรงเรียนชาย<br>จำนวน...</button></center></Td>
+        <td><center><button class="button button2">โรงเรียนหญิง<br>จำนวน...</button></center></td>
+    </Tr>
+    
+    <Tr>
+        <Td><canvas id="myChart3" style="width:200%;max-width:600px"></canvas></Td>
+        <td><canvas id="myChart5" style="width:200%;max-width:600px"></canvas></td>
+    </Tr>
+    </table>  
+
+<script>
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+];
+var xValues = ["ภาษาไทย", "ภาษาอังกฤษ", "วิทยาศาสตร์", "คอมพิวเตอร์", "สังคมศาสตร์"];
+var yValues = [55, 49, 44, 24, 15];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "โรงเรียขนาดเล็ก"
+    }
+  }
+});
+
+var xValues = ["ภาษาไทย", "ภาษาอังกฤษ", "วิทยาศาสตร์", "คอมพิวเตอร์", "สังคมศาสตร์"];
+var yValues = [55, 49, 44, 24, 15];
+new Chart("myChart2", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "โรงเรียนขนาดกลาง"
+    }
+  }
+});
+var xValues3 = ["ภาษาไทย", "ภาษาอังกฤษ", "วิทยาศาสตร์", "คอมพิวเตอร์", "สังคมศาสตร์"];
+var yValues3 = [55, 49, 44, 24, 15];
+new Chart("myChart3", {
+  type: "bar",
+  data: {
+    labels: xValues3,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues3
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "โรงเรียนรวม"
+    }
+  }
+});
+
+new Chart("myChart4", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "โรงเรียนรวม"
+    }
+  }
+});
+new Chart("myChart5", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "โรงเรียนรวม"
+    }
+  }
+});
+new Chart("myChart6", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "โรงเรียนรวม"
+    }
+  }
+});
+
+// JS 
+</script>
+
+</body>
+</html>
